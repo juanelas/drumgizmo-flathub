@@ -5,7 +5,6 @@
     "runtime-version": "stable",
     "sdk": "org.freedesktop.Sdk//22.08",
     "build-extension": true,
-    "extension-tag": "0.9.20",
     "appstream-compose": false,
     "build-options": {
         "prefix": "/app/extensions/Plugins/drumgizmo",
@@ -26,16 +25,16 @@
                     "path": "org.freedesktop.LinuxAudio.Plugins.drumgizmo.metainfo.xml"
                 }
             ],
-            "buildsystem": "simple",
             "build-options": {
                 "env": {
                     "CPPFLAGS": "-I/app/extensions/Plugins/drumgizmo/include"
                 }
             },
-            "build-commands": [
-                "./configure --prefix=/app/extensions/Plugins/drumgizmo --enable-lv2 --disable-cli --with-lv2dir=/app/extensions/Plugins/drumgizmo/lv2",
-                "make",
-                "make install"
+            "config-opts": [
+                "--prefix=/app/extensions/Plugins/drumgizmo",
+                "--enable-lv2",
+                "--disable-cli",
+                "--with-lv2dir=/app/extensions/Plugins/drumgizmo/lv2"
             ],
             "cleanup": [
                 "/bin",

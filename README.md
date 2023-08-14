@@ -12,7 +12,7 @@ Features include:
 - Stand-alone midi renderer, generating .wav files, 1 for each channel
 - Stand-alone midi input, making it possible to use DrumGizmo as a software sampler for an electronic drumkit
 
-This is a **flatpack version of drumgizmo** using `org.freedesktop.LinuxAudio.BaseExtension` available in flathub. As a result ytou can use drumgizmo with the flathub's version of Ardour and/or Bitwig.
+This is a **flatpack version of drumgizmo** using `org.freedesktop.LinuxAudio.BaseExtension` available in flathub. It can be used to make drumgizmo LV2 plugin available for the flathub's versions of Ardour and/or Bitwig.
 
 ## Usage
 
@@ -32,6 +32,18 @@ You will need `flatpack` and `flatpak` builder. Install them using your distribu
 > flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 > ```
 
+Install the Freedesktop 22.08 runtime and SDK if not already installed with:
+
+```console
+flatpak install flathub org.freedesktop.Platform//22.08 org.freedesktop.Sdk//22.08
+```
+
+Install the `stable` version of `org.freedesktop.LinuxAudio.BaseExtension` if not already installed with:
+
+```console
+flatpak install flathub org.freedesktop.LinuxAudio.BaseExtension
+```
+
 Now, clone this repository, and from the project's root run:
 
 ```console
@@ -39,4 +51,4 @@ git submodule update --remote --merge
 sudo flatpak-builder --system --install --force-clean build-dir org.freedesktop.LinuxAudio.Plugins.drumgizmo.json
 ```
 
-That's all! Enjoy!
+That's all! Enjoy drumming!
